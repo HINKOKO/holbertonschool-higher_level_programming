@@ -1,7 +1,13 @@
-# Team What If ? or Team What Else ?
-## (more seriously) Here it's about If/Else statement, loops and functions
+# **Team What If ? or Team What Else ?**
+## More seriously, here it's going to be about If/else statement, loops and functions in Python.
 
 ### **General**
+
+<br>
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" />
+</p>
 
 - **Why Python programming is awesome**
 - Why indentation is so important in Python
