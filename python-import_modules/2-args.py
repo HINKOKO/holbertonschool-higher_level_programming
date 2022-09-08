@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from ast import Num
 from sys import argv
 
 if __name__ == "__main__":
