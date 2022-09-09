@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import dis
 from calculator_1 import add, sub
 
 
@@ -8,7 +7,7 @@ def magic_calculation(a, b):
         c = add(a, b)
         return c
     for i in range(4, 6):
-        c += i
+        c = add(c, i)
         return c
     else:
         return sub(a, b)
