@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str or not roman_string:
-        return 0
-    else:
+    if type(roman_string) == str and roman_string:
         r = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
         res = 0
-        for i in range(len(roman_string) - 1):
-            left = roman_string[i]
-            right = roman_string[i + 1]
-            if r[left] < r[right]:
-                res -= r[left]
+        for i in range(len(roman_string)):
+            if i > 0 and r[roman_string[i]] > r[roman_string[i - 1]]:
+                res += r[roman_string[i]] - 2 * r[roman_string[i - 1]]
             else:
-                res += r[left]
-    res += r[roman_string[-1]]
-    return res
+                res += r[roman_string[i]]
+        return res
+    else:
+        return 0
