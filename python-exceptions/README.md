@@ -71,5 +71,20 @@
   		File "<stdin>", line 1, in <module>
 	NameError: HiThere
 	```
-- When do we need to implement a clean-up action after an exception
+	Think of this example, say you want a user to enter a date.The date has to be either today or in the future.
+	If the user enters a past date, tadaaaa ! in your program you have planned to **raise an exception**:
+	```
+	dateinput = input("Enter date in yyyy-mm-dd format: ")
+	date_provided = datetime.strptime(dateinput, '%Y-%m-%d')
+	print ("Date provided is: " + date_provided.strftime('%Y-%m-%d'))
+
+	if (date_provided.date() < current_date.date()):
+    	raise Exception("Date provided can't be in the past")
+	```
+
+- **When do we need to implement a clean-up action after an exception:**
+	The *try statement* supports another optional block which is designed to define *clean-up actions* that **must be executed under all circumstances.**
+	This *clean-up block* is declared in a **finally:**	clause. If the **finally** is present, it will be executed wether or not the `try` statement produces an exception.
+
+	In real world applications, the finally clause is **useful** for releasing external resources (such as files or network connections), *regardless of whether the use of the resource was successful.*
 
