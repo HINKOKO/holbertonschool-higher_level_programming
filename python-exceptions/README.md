@@ -1,6 +1,15 @@
 # **Python - Exceptions**
 
 ## **Learning Objectives:**
+- [Introduction](#introduction)
+- [What’s the difference between errors and exceptions](#what’s)
+- [What are exceptions and how to use them](#what)
+- [When do we need to use exceptions](#when)
+- [How to correctly handle an exception](#how)
+- [What’s the purpose of catching exceptions](#what'spurpose)
+- [How to raise a builtin exception](#howtoraise)
+- [When do we need to implement a clean-up action after an exception](#whendoweneedtoimplementaclean_upactionafteranexception)
+
 - **Introduction:**
 	Software applications don’t run perfectly all the time, you should have noticed that. :smile: Despite intensive debugging and multiple testing levels, applications still fail. Bad data, broken network connectivity, corrupted databases, memory pressures, and unexpected user inputs can all disturb an application to run normally. When such events occurs, disturbing the normal flow, this is known as **an exception.** And it's your application's job—and your job as a coder—to catch and handle these exceptions gracefully so that your app keeps working.
 
