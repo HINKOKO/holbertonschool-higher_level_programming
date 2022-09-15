@@ -1,6 +1,8 @@
 # **Python - Exceptions**
 
 ## **Learning Objectives:**
+- **Introduction:**
+	Software applications don’t run perfectly all the time, you should have noticed that. :smile: Despite intensive debugging and multiple testing levels, applications still fail. Bad data, broken network connectivity, corrupted databases, memory pressures, and unexpected user inputs can all disturb an application to run normally. When such events occurs, disturbing the normal flow, this is known as **an exception.** And it's your application's job—and your job as a coder—to catch and handle these exceptions gracefully so that your app keeps working.
 
 - **What’s the difference between errors and exceptions:**
 	Before going any further, we have to understand the subtle difference between an `error` and an `exception`.
@@ -26,10 +28,48 @@
 	```
 	The last line shows what happened, `exceptions` comes in different types, e.g. you may have 
 	**ZeroDivisionError, NameError and TypeError.**
-- What are exceptions and how to use them
-- When do we need to use exceptions
-- How to correctly handle an exception
-- What’s the purpose of catching exceptions
-- How to raise a builtin exception
+	==> string printed as the exception type is the name of `the built-in exception` that occured.
+	[Built-in exceptions](https://docs.python.org/3/library/exceptions.html#bltin-exceptions) lists them and give their meaning.
+
+- **What are exceptions and how to use them:**
+	After what has been said, we can declare that an `exception` is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. In general, when a Python script encounters a situation that it cannot deal with, it raises an exception. **An exception is a Python object that represents an error.**
+	
+- **How to correctly handle an exception:**
+	Files from `0-safe_print_list.py` to `4-list_division.py` are good examples of how to handle with exceptions.
+	Here is the generic syntax for handling an exception:
+	```
+	try:
+		Do your stuff here...
+		........
+	except Exception_1:
+		If Exception_1 occurs, then execute this block
+	except Exception_2:
+		If Exception_2 occurs, then execute this block
+	```
+	**Notes**
+	- First, the *try block* is executed
+	- If no exception occurs, the *except block* is <u>skipped</u> and execution of *try* is finished
+	- A single *try* may have multiples *except statements*, very useful when the *try block* may generates different kind of exceptions
+	- After your *except block*, you may add an *else block*, the code inside will execute if the code in *try* didn't raise an exception.
+	- The *else block* is the right place for code that does not need *the try block's protection*.
+	**==> Good to know:** Exception handling don't just handle exceptions if they happen in the *try block*, but also if they occur **inside functions that are called (even indirectly) in the *try block*.**
+
+- **When do we need to use exceptions:**
+	Basically, when you write ***some suspicious code*** that may raise an exception, you can defend your program by placing the *suspicious code* in a `try: block.` Like shown above, after the `try: block`, include an `except: statement`, followed by a block of code which handles the problem as elegantly as possible.
+- **What’s the purpose of catching exceptions:**
+	If you have no exception handling, and something goes wrong with the program (you divide by 0, you input alpha into a numeric variable, stuff like that...), the program "crashes".
+	But friends, with exception handling, the user gets a nice little 'Please don't do that, because...hit Enter to go where you were'
+	An elegant crash, not a dirty one.
+
+- **How to raise a builtin exception:**
+	*(Exercices 5-raise_exception and 6-raise_exception_msg)*
+	The raise statement allows a programmer to force, or throw a specified exception if a condition occurs.
+	Have a look at this example, coming from the official python docs:
+	```
+	>>> raise NameError('HiThere')
+	Traceback (most recent call last):
+  		File "<stdin>", line 1, in <module>
+	NameError: HiThere
+	```
 - When do we need to implement a clean-up action after an exception
 
