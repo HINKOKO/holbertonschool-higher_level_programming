@@ -1,4 +1,4 @@
-# <span style="color:darkorange">**Python - Data Structures, Lists, Tuples**</span>.
+# **Python :snake: - Data Structures, Lists, Tuples**
 
 ## **General**
 
