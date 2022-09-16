@@ -81,5 +81,14 @@
 	When you create a tuple, you normally assing values to it, this is what we call *packing a tuple*:
 	cars = ("Benz", "Toyota", "Dodge")
 
-- What is sequence unpacking
-- What is the del statement and how to use it
+- **What is sequence unpacking:**
+	First a word on *iterators*: `iterators` are python objects, which can be iterated over, that is to say they have the ability to **return on element at a time**, now let's have a look at how to **unpack a tuple**:
+		```
+		>>> tuple = ("Ferrari", "Bentley", "Cab")
+		>>> (red, green, yellow) = tuple  #you just unpacked your tuple!
+		>>> print(red)
+		>>> Ferrari
+		```
+
+- **What is the del statement and how to use it:**
+
