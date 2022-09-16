@@ -77,6 +77,9 @@
 	homogeneous : all elements of sequence are of the same type (strings)<br>
 	heterogeneous : where you can store different types of element (lists) <br>
 	==> <u>In general</u>, homogeneous are more efficient than heterogeneous in terms of storage and operations.
-- What is tuple packing
+- **What is tuple packing:**
+	When you create a tuple, you normally assing values to it, this is what we call *packing a tuple*:
+	cars = ("Benz", "Toyota", "Dodge")
+
 - What is sequence unpacking
 - What is the del statement and how to use it
