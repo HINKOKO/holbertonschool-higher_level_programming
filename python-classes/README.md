@@ -16,12 +16,16 @@
 	Guido wrote:"One of my goals for Python was to make it so that all objects were "first class", by this, I meant that I wanted all objects that could be named in the language (e.g. integers, strings, functions, classes, modules, methods, and so on) to have an equal status. That is, they can be assigned to variables, placed in lists, stored in dictionaries, passed as arguments, an so forth" (Blog, The History of Python, February 27, 2009).
 
 - **What is a class:**
+	
 - **What is an object and an instance:**
 	An **Object** is an entity, or a "thing" in your program, often a noun.(such as a person, an email)
 	**Objects** are like little bundles of data that will be used in the life of our program.
 	For example, a person will have *properties* (or "data"), like *Name, Age, Adress*, our object also have *behaviors* , the actions the object can take, like *Walk, Talk, Breathe.*
 
-- What is the difference between a class and an object or instance
+- **What is the difference between a class and an object or instance:**
+	**`Classes`** are used to create *user-defined data structures*.**`Classes`** define functions called **`methods`**, which will define the *behaviors* and *actions* that an object created from the class can perform with its own data.
+	So a `class` is kind of a **blueprint** for how something should be defined.(No data in it actually)
+	While the class is a **blueprint**, an **`instance`** is an `object` that is build from the class and contains **real data.** An **`Instance`** of the **`class`** is not a **blueprint** anymore.
 - What is an attribute
 - What are and how to use public, protected and private attributes
 - What is self
