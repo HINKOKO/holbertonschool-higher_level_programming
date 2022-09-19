@@ -6,14 +6,13 @@ Defines class square with private instance attribute 'size'
 
 
 class Square:
-    """
-    class Square
+    """class Square.
+        Instantiation with size
+        Note that size is here a private instance attribute
     """
 
     def __init__(self, size):
         """
-        attribute size is make private
-        with double underscore as prefix
-        Instantiation with size
+        Initializes the data for class square.
         """
         self.__size = size
