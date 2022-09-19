@@ -47,7 +47,4 @@ class Square:
         Prints the square on screen
         of size size
         """
-        for rows in range(self.__size):
-            for cols in range(self.__size):
-                print("#", end='')
-            print()
+        print("\n".join("#" * self.__size for rows in range(self.__size)))
