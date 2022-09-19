@@ -48,4 +48,6 @@ class Square:
         of size size
         """
         for rows in range(self.__size):
-            print("".join("#" * self.__size))
+            for cols in range(self.__size):
+                print("#", end='')
+            print()
