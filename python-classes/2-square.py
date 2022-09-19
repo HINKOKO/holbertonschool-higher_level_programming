@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+Module - 2
+Defines a class Square with private size
+Checks for size type and value and valid it
+"""
+
+
 class Square:
     """
     class Square
