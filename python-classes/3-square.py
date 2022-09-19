@@ -10,6 +10,8 @@ class Square:
     """
     class Square
     Instantiation with size
+    Functions: __init__(self, size)
+              area(self)
     """
 
     def __init__(self, size=0):
@@ -27,4 +29,5 @@ class Square:
             self.__size = size
 
     def area(self):
+        """Computes area of square"""
         return int(self.__size ** 2)
