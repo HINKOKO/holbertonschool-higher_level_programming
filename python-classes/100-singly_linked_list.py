@@ -45,11 +45,15 @@ class SinglyLinkedList:
     def __init__(self):
         self.__head = None
 
-    def print(self):
+    def __str__(self):
+        """String printer"""
+        printer = ""
         current = self.__head
-        while (current):
-            print(current.data)
-            current = current.next
+        while current:
+            printer += str(current.data)
+            current = current.next_node
+            printer += "\n"
+            return printer
 
     def sorted_insert(self, value):
         """
