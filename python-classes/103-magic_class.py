@@ -7,11 +7,12 @@ import math
 
 class MagicClass:
     """MagicClass
-    Defines a class for computing perimeter
+    Defines a class for computing perimeter and aera
+        of a circle with parameter radius
     """
 
     def __init__(self, radius):
-        """check for radius valid data"""
+        """check for radius valid data type"""
         if type(radius) is not int and \
                 type(radius) is not float:
             raise TypeError('radius must be a number')
@@ -19,4 +20,9 @@ class MagicClass:
             return self.__radius
 
     def area(self):
-        return self.__radius * 2 * pi
+        """Computes area according to radius"""
+        return (self.__radius ** 2) * math.pi
+
+    def circumference(self):
+        """Computes circumference according to radius"""
+        return 2 * self.__radius * math.pi
