@@ -11,8 +11,9 @@ class MagicClass:
         of a circle with parameter radius
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """check for radius valid data type"""
+        self.__radius = 0
         if type(radius) is not int and \
                 type(radius) is not float:
             raise TypeError('radius must be a number')
