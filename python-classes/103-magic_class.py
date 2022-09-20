@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from cmath import pi
-"""Magic Module for MagicClass"""
+"""
+Magic Module for MagicClass
+"""
+import math
 
 
 class MagicClass:
@@ -14,7 +16,7 @@ class MagicClass:
                 type(radius) is not float:
             raise TypeError('radius must be a number')
         else:
-            return self.radius
+            return self.__radius
 
     def area(self):
-        return self.radius * 2 * pi
+        return self.__radius * 2 * pi
