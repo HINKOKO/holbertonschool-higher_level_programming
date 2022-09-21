@@ -15,19 +15,22 @@ Output expected for signed and unsigned int and floats:
 	>>> add_integer(-8, 10)
 	2
 	>>> add_integer(2.5, 10)
-	10
+	12
 	>>> add_integer(2.5, 5.5)
 	7
 
 Failures expected:
 
-	>>> add_integer(2, "Chong")
-	Traceback (most recent call last):
-	File "<stdin>", line 1, in <module>
-	...
-	raise TypeError("b must be an integer")
-	>>> add_integer(None, 5)
+	>>> add_integer("chong", "chong")
 	Traceback (most recent call last):
 	...
-	raise TypeError("a must be an integer")
+	TypeError: a must be an integer
+	>>> add_integer(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(2e8000, 10)
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
 
