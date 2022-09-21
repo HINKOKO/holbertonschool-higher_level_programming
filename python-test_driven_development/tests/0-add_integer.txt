@@ -21,6 +21,11 @@ Output expected for signed and unsigned int and floats:
 
 Failures expected:
 
+	>>> add_integer("Biggi", 8)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
 	>>> add_integer("chong", "chong")
 	Traceback (most recent call last):
 	...
