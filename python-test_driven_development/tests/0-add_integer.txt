@@ -34,7 +34,7 @@ Failures expected:
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
-	>>> add_integer(2e8000, 10)
+	>>> add_integer(2e8000)
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
