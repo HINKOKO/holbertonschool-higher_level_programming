@@ -25,7 +25,8 @@ First import the function
 	>>> matrix_divided(matrix, float('inf'))
 	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
-2 - Errors expected
+Errors expected
+---------------
 
 	>>> matrix = [[1, 2], [1, 2, 3]]
 	>>> matrix_divided(matrix, 1) 
@@ -49,7 +50,7 @@ First import the function
 	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 	...
-	TypeError: matrix must be a matrix (list of lists) of integers/float
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 	
 	
