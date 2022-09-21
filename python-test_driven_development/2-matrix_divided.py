@@ -10,8 +10,10 @@ def matrix_divided(matrix, div):
     -matrix must be a list of integers or floats
     -Each row of the matrix must be of the same size
     -div must be a a number and a positive one dude"""
-    error_L_int_float = "matrix must be a matrix (list of lists) of integers/floats"
-    if type(matrix) is not list:
+    error_L_int_float = "matrix must be a matrix (list of lists)\
+         of integers/floats"
+    if type(matrix) is not list or len(matrix) == 0 or \
+            type(matrix[0]) is not list or len(matrix[0]) == 0:
         raise TypeError(error_L_int_float)
     if not isinstance(div, (float, int)):
         raise TypeError("div must be a number")
