@@ -9,7 +9,7 @@
 	import unittest
 	from circles import circles_area 
 	#from your module name import the function name
-	from matrixh import pi
+	from matrix import pi
 	#you need to import pi too to run the tests
 	```
 
@@ -24,6 +24,9 @@
 	**Tests** are <u>***very important***</u> because we can not just type code and walk away and assume **everything will be allright.**<br>
 	By writing *unit tests* we can test and check the software we are working on, to assure that all cases will be covered, with appropriate errors when necessary.
 - **How to write Docstrings to create tests:**
-- How to write documentation for each module and function
-- What are the basic option flags to create tests
-- How to find edge cases
+	Proper way is demonstrated inside the folder /tests on this repository
+- **How to write documentation for each module and function:**
+	Same answer as above
+- **What are the basic option flags to create tests:**
+
+- **How to find edge cases:**
