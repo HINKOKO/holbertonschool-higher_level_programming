@@ -17,4 +17,5 @@ My name is dav chong
 >>> say_my_name(8, 5)
 Traceback (most recent call last):
 ...
-ValueError: Unknown format code 's' for object of type 'int'
+TypeError: first_name must be a string
+
