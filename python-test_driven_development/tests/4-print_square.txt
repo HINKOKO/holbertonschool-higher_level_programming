@@ -1,0 +1,36 @@
+Text file for testing via doctest Module - 4-print_square
+=========================================================
+Using ``print_square``
+----------------------
+First import the function:
+	>>> print_square = __import__('4-print_square').print_square
+
+========== Success cases ===========
+
+>>> print_square(4)
+####
+####
+####
+####
+
+========== Error cases ============
+
+# if size is less than 0
+>>> print_square(-5)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+# if size is not an integer
+>>> print_square("k")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(5.2)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+
