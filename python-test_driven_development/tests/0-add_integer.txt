@@ -18,6 +18,9 @@ Output expected for signed and unsigned int and floats:
 	12
 	>>> add_integer(2.5, 5.5)
 	7
+With default value b=98
+	>>> add_integer(1)
+	99
 
 Failures expected:
 
