@@ -1,0 +1,33 @@
+The test text file for 0_add_integer
+------------------------------------
+Using ``0_add_integer`` 
+=======================
+First step ==> import the function, like in the 0-main.py
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Successful cases:
+
+Output expected for signed and unsigned int and floats:
+	>>> add_integer(1, 2)
+	3
+	>>> add_integer(10, -8)
+	2
+	>>> add_integer(-8, 10)
+	2
+	>>> add_integer(2.5, 10)
+	10
+	>>> add_integer(2.5, 5.5)
+	7
+
+Failures expected:
+
+	>>> add_integer(2, "Chong")
+	Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+	...
+	raise TypeError("b must be an integer")
+	>>> add_integer(None, 5)
+	Traceback (most recent call last):
+	...
+	raise TypeError("a must be an integer")
+
