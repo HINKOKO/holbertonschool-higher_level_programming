@@ -1,0 +1,20 @@
+Text file for testing via doctest Module - 3-say_my_name.py
+==========================================================
+Using ``say_my_name``
+--------------------
+First import the function:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+========== Success Cases =========
+
+# Normal use
+>>> say_my_name("dav", "chong")
+My name is dav chong
+
+========== Error cases ===========
+
+# wrong parameter
+>>> say_my_name(8, 5)
+Traceback (most recent call last):
+...
+ValueError: Unknown format code 's' for object of type 'int'
