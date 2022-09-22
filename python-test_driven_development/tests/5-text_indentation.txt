@@ -1,0 +1,29 @@
+Text file for testing via doctest Module - 5 - text_indentation
+===============================================================
+Using ``text_indentation``
+--------------------------
+First import the function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+========= Success cases ===========
+
+# text is a valid string
+>>> string = "Lorem? ipsum!: KAwabunga !!! stop."
+>>> text_indentation(string)
+Lorem?
+    <BLANKLINE>
+    ipsum!:
+    <BLANKLINE>
+    KAwabunga !!! stop.
+    <BLANKLINE>
+    <BLANKLINE>
+
+========= Error Cases ===========
+
+# text is not valid string
+
+>>> string2 = 852
+>>> text_indentation(string2)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
