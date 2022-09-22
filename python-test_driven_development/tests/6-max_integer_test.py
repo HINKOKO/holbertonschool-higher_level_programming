@@ -22,6 +22,11 @@ class TestMaxInteger(unittest.TestCase):
         list = [1, 5, 80, 4, 7]
         self.assertEqual(max_integer(list), 80)
 
+    def test_one_element(self):
+        """when list is one element long"""
+        list = [150]
+        self.assertEqual(max_integer(list), 150)
+
     def test_empty(self):
         """test when list is empty"""
         list = []
