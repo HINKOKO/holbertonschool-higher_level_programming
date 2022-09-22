@@ -19,10 +19,18 @@ KAwabunga !!! stop.
 
 ========= Error Cases ===========
 
-# text is not valid string
+# 'text' is not valid string
 
 >>> string2 = 852
 >>> text_indentation(string2)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
+
+# No arguments provided
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
