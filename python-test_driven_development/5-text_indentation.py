@@ -1,16 +1,23 @@
 #!/usr/bin/python3
-"""Module 5-text_indentation"""
+"""Module 5 - Text Indentation"""
 
 
 def text_indentation(text):
-    """Text_indentation
-    - Text must be a string
-    - Replace each . ? : with 2 newlines"""
+    """ 'text' must be a string
+        returns a revised text
+        where each ?:. has been replaced with 2 new lines"""
     if type(text) is not str:
         raise TypeError("text must be a string")
     else:
-        replacer = {'?': '?\n\n', '.': '.\n\n', ':': ':\n\n'}
-        for key, value in replacer.items():
-            text = text.replace(key, value)
-        text = text.replace('\n ', '\n')
-        print(text)
+        flag = False
+        for char in text:
+            if flag:
+                if char == " ":
+                    continue
+                flag = False
+            if char == '.' or char == '?' or char == ':':
+                print(char)
+                print("")
+                flag = True
+            else:
+                print(char, end="")

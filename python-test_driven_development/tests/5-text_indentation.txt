@@ -16,7 +16,6 @@ ipsum!:
 <BLANKLINE>
 KAwabunga !!! stop.
 <BLANKLINE>
-<BLANKLINE>
 
 ========= Error Cases ===========
 
