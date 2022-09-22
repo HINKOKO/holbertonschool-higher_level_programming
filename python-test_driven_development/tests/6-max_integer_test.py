@@ -6,4 +6,4 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     def test_notinteger(self):
-        self.assertIsInstance(max_integer('B'), int)
+        self.assertNotIsInstance(max_integer('B'), int)
