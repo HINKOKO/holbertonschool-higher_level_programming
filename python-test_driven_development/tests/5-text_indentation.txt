@@ -11,12 +11,12 @@ First import the function:
 >>> string = "Lorem? ipsum!: KAwabunga !!! stop."
 >>> text_indentation(string)
 Lorem?
-    <BLANKLINE>
-    ipsum!:
-    <BLANKLINE>
-    KAwabunga !!! stop.
-    <BLANKLINE>
-    <BLANKLINE>
+<BLANKLINE>
+ipsum!:
+<BLANKLINE>
+KAwabunga !!! stop.
+<BLANKLINE>
+<BLANKLINE>
 
 ========= Error Cases ===========
 
