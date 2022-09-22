@@ -9,6 +9,10 @@ class TestMaxInteger(unittest.TestCase):
         """test what happens when not integers are passed"""
         self.assertNotIsInstance(max_integer('B'), int)
 
-    def test_maxfound(self):
+    def test_max_at_end(self):
+        """test when max integer at the end"""
         self.assertTrue(max_integer([1, 2, 3, 4]), 4)
+
+    def test_max_at_beginning(self):
+        """test when max integer at the beginning"""
         self.assertTrue(max_integer([4, 3, 2, 1]), 4)
