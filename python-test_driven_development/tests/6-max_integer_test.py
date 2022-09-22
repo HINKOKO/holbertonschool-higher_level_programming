@@ -16,3 +16,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_at_beginning(self):
         """test when max integer at the beginning"""
         self.assertEqual(max_integer([4, 3, 2, 1]), 4)
+
+    def test_max_middle(self):
+        """test when max is at the middle"""
+        list = [1, 5, 80, 4, 7]
+        self.assertEqual(max_integer(list), 80)
+
+    def test_empty(self):
+        """test when list is empty"""
+        list = []
+        self.assertEqual(max_integer(list), None)
