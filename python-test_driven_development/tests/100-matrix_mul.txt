@@ -1,0 +1,9 @@
+Text file to be tested via doctest Module 100 - matrix_mul
+==========================================================
+Using ``matrix_mul``
+-------------------
+First import the function
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+===== Success Cases =====
+# matrix of valid size and valid types
