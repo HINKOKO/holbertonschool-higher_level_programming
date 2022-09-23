@@ -7,3 +7,32 @@ First import the function
 
 ===== Success Cases =====
 # matrix of valid size and valid types
+>>> matrix_success_A = [[1,2] , [2,3] , [5,8]]
+>>> matrix_success_B = [[1,5,7] , [5, 12, 3]]
+>>> matrix_mul(matrix_success_A, matrix_success_B)
+[[11, 29, 13], [17, 46, 23], [45, 121, 59]]
+
+# matrix of valid types but invalid size
+# I mean:  number of rows of A != number of cols of B
+
+>>> matrixfail = [[1, 2] , [2, 1]]
+>>> matrix_mul(matrixfail, matrix_success_A)
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be mutiplied
+
+# matrix with garbage value inside
+>>> matrix_clean = [[1, 2], [3, 4]]
+>>> matrix_fail = [[1, 'potato'], [3, 5]]
+>>> matrix_mul(matrix_fail, matrix_clean)
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+
+# matrix which is not "rectangle"
+>>> matrix_fail = [[1, 2, 4, 5], [3, 7]]
+>>> matrix_clean = [[1, 2], [3, 4]]
+>>> matrix_mul(matrix_fail, matrix_clean)
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
