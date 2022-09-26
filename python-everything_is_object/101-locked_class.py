@@ -3,6 +3,6 @@
 
 
 class LockedClass:
-    """ The basic usage of __slots__ 
+    """ The basic usage of __slots__
     is to save space in objects"""
     __slots__ = ['first_name']
