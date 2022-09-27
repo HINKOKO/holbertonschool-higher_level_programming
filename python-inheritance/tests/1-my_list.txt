@@ -2,7 +2,7 @@ Text file for testing via doctest the Module 1 - My list
 ===========================================================
 Using ``class My_list(list)`` and function ``print_sorted``
 ----------------------------------------------------------
-First import the module:
+First import the method:
 >>> MyList = __import__('1-my_list').MyList
 
 ========== Success cases ==================
