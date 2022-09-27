@@ -50,6 +50,8 @@ True
 >>> print(list.print_sorted())
 [13, 20, 25]
 None
+>>> print(list)
+[20, 25, 13]
 
 ========== Failure cases ===================
  # bad types provided
