@@ -1,0 +1,31 @@
+Text file to be tested with doctest and Module 7 - Integer validator
+====================================================================
+First import the class:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+====== Successfull cases ========
+# Shouldn' print any error and shouldn't return anything
+# value is int and greater than 0
+>>> b = BaseGeometry()
+>>> b.integer_validator("my_shangila", 144)
+>>> b.integer_validator("gorilla", 705)
+
+====== Failure Cases ==============
+
+# wrong type provided (non-ints)
+>>> b.integer_validator("banana", 5.023)
+Traceback (most recent call last):
+...
+TypeError: banana must be an integer
+
+# value less than 0
+>>> b.integer_validator("pears", -8)
+Traceback (most recent call last):
+...
+ValueError: pears must be greater than 0
+
+# value is 0
+>>> b.integer_validator("peach", 0)
+Traceback (most recent call last):
+...
+ValueError: peach must be greater than 0
