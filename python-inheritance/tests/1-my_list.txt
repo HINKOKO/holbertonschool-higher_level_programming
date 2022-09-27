@@ -6,7 +6,7 @@ First import the method:
 >>> MyList = __import__('1-my_list').MyList
 
 ========== Success cases ==================
-
+# list of integers
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -15,8 +15,22 @@ First import the method:
 >>> my_list.print_sorted()
 [1, 2, 3, 4]
 
+# empty list
+>>> MyList = __import__('1-my_list').MyList
+>>> empty = MyList()
+>>> print(empty)
+[]
+>>> empty.print_sorted()
+[]
+
+# list with one element
+>>> only_one = MyList()
+>>> only_one.append(777)
+>>> only_one.print_sorted()
+[777]
+
 ========== Failure cases ===================
- # not integers provided
+ # bad types provided
  >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
 >>> my_list.append(4)
