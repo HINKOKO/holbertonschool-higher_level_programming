@@ -1,0 +1,27 @@
+Text file for testing via doctest the Module 1 - My list
+===========================================================
+Using ``class My_list(list)`` and function ``print_sorted``
+----------------------------------------------------------
+First import the module:
+>>> MyList = __import__('1-my_list').MyList
+
+========== Success cases ==================
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+
+========== Failure cases ===================
+ # not integers provided
+ >>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(4)
+>>> my_list.append("jojo")
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'str' and 'int'
