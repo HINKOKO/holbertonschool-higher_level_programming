@@ -4,6 +4,14 @@ First import the class:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 ====== Successfull cases ========
+# Testin non-implemented area method
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> print(b.area())
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
 # Shouldn' print any error and shouldn't return anything
 # value is int and greater than 0
 >>> b = BaseGeometry()
@@ -11,6 +19,53 @@ First import the class:
 >>> b.integer_validator("gorilla", 705)
 
 ====== Failure Cases ==============
+# Testin no arguments provided
+>>> b.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Testin only one argument
+>>> b.integer_validator("TchaïBomba")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# Testin "fake" integer, will it succeed on computer ?
+>>> b.integer_validator("barak", "50")
+Traceback (most recent call last):
+...
+TypeError: barak must be an integer
+
+# Testin with Boolean
+>>> b.integer_validator("boulah", False)
+Traceback (most recent call last):
+...
+TypeError: boulah must be an integer
+
+# Testin with list
+>>> b.integer_validator("list", [5])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+# Testin with tuple of integer, even one let's see
+>>> b.integer_validator("kabank", (4,))
+Traceback (most recent call last):
+...
+TypeError: kabank must be an integer
+
+# Testin with a set of integer
+>>> b.integer_validator("moudjik", {1, 2, 3})
+Traceback (most recent call last):
+...
+TypeError: moudjik must be an integer
+
+# Inexisting integer
+>>> b.integer_validator("uuh", None)
+Traceback (most recent call last):
+...
+TypeError: uuh must be an integer
 
 # wrong type provided (non-ints)
 >>> b.integer_validator("banana", 5.023)
