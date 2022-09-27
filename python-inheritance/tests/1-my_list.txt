@@ -4,6 +4,13 @@ Using ``class My_list(list)`` and function ``print_sorted``
 ----------------------------------------------------------
 First import the method:
 >>> MyList = __import__('1-my_list').MyList
+>>> list = MyList()
+>>> list.append(243)
+>>> list.print_sorted()
+[243]
+>>> id(list) is not id(list.print_sorted())
+[243]
+True
 
 ========== Success cases ==================
 # list of integers
@@ -28,6 +35,9 @@ First import the method:
 >>> only_one.append(777)
 >>> only_one.print_sorted()
 [777]
+
+# check that print_sorted returns a new list
+
 
 ========== Failure cases ===================
  # bad types provided
