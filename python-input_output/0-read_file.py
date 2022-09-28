@@ -3,5 +3,6 @@
 
 
 def read_file(filename=""):
-    with open(filename, 'r', encoding="UTF-8") as fabien:
-        print(fabien.read())
+    """reads a text file and print to stdout"""
+    with open(filename, 'r', encoding="UTF-8") as worky:
+        print(worky.read())

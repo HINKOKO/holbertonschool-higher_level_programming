@@ -1,4 +1,4 @@
-# **Python - Input/Output**
+# **Python :snake: - Input/Output**
 
 ## **Learning Objectives**
 
