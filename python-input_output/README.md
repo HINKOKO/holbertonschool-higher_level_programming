@@ -21,6 +21,7 @@
 - How to make sure a file is closed after using it
 - What is and how to use the with statement
 - **What is JSON:**
+	![alt text](https://pedrorijo.com/assets/img/json-logo.png)
 	A JSON file is a file that stores simple data structures and objects in JavaScript Object Notation (JSON) format, which is a standard data interchange format. It is primarily used for transmitting data between a web application and a server. JSON files are lightweight, text-based, human-readable, and can be edited using a text editor.
 	- **JSON** is an abbreviation of JavaScript Object Notation
 	- Though the name has "JavaScript" on it, JSON is a language independent **data interchange format**
