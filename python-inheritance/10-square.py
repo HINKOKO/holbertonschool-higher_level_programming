@@ -15,6 +15,6 @@ class Square(Rectangle):
         """Instantiation with size
 wich must be private and positive integer
 Check accomplished by integer_validator"""
-        super().__init__(size, size)
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
