@@ -17,4 +17,3 @@ wich must be private and positive integer
 Check accomplished by integer_validator"""
         self.integer_validator("size", size)
         super().__init__(size, size)
-        self.__size = size
