@@ -3,15 +3,12 @@
 
 
 class MyInt(int):
-    """Inverts == and !="""
+    """Rebel class that inverts == and !="""
 
-    def __init__(self, val1):
-        self.val1 = val1
+    def __eq__(self, other):
+		"""equality becomes inequality"""
+        return super().__ne__(other)
 
-    def __equality__(self, val2):
-        """Returns True if not equal"""
-        return self.val1 != val2
-
-    def __invert__(self, val2):
-        """Returns True if equals"""
-        return self.val1 == val2
+    def __ne__(self, other):
+		"""inequality becomes equality"""
+        return super().__eq__(other)
