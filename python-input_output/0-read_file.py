@@ -4,5 +4,6 @@
 
 def read_file(filename=""):
     """reads a text file and print to stdout"""
-    with open(filename, 'r', encoding="UTF-8") as worky:
-        print(worky.read())
+    with open(filename, encoding="UTF8") as worky:
+        for line in worky:
+            print(line, end="")
