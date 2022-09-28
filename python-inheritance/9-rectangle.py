@@ -19,11 +19,12 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """ let's override and complete 
+        """ let's override and complete
         parent empty method area"""
         return (self.__width * self.__height)
 
     def __str__(self):
         """returns a stringed Rectangle description
         [Rectangle] <width>/<height>"""
-        return ("[{:s}] {:d}/{:d}".format(type(self).__name__, self.__width, self.__height))
+        return ("[{:s}] {:d}/{:d}".format(type(self).__name__,
+                                          self.__width, self.__height))
