@@ -8,4 +8,4 @@ def write_file(filename="", text=""):
     to a file 'filename'"""
     with open(filename, mode='w', encoding="UTF8") as writty:
         writty.write(text)
-        return len(text)
+        return writty.tell()
