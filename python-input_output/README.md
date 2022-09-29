@@ -36,7 +36,8 @@
 	
 	There are different formats for the serialization of data, such as **JSON!**, XML, HDF5, and Python’s pickle, for different purposes. JSON, for instance, returns a ***human-readable string form**, while Python’s pickle library can return a byte array.
 
-	**<u>?WHy do we serialize?</u>**
+	**<u>?WHy do we serialize?</u>***
+	**Serialization is the method of converting Python objects into JSON**
 	Think about storing an integer; how would you store that in a file or transmit it? That’s easy! We can just write the integer to a file and store or transmit that file.
 	...
 	Now Think about storing a **Python object** (e.g., a Python dictionary or a Pandas DataFrame), which has a complex structure and many attributes (e.g., the columns and index of the DataFrame, and the data type of each column)? How would you store it as a file or transmit it to another computer?
