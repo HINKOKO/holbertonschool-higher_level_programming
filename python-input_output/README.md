@@ -76,3 +76,15 @@
 	|				 | and additionally allows you to store the information into a text file  |
 	| **json.loads()** | Deserializes a JSON object to a standard Python object               |
 	| **json.load()**  | Deserializes a JSON file object into a standard Python object        |
+
+
+## **Purpose of the files in this repo**
+
+|  File            |             Purpose                                                  |
+|:----------------:|:--------------------------------------------------------------------:|
+| [0-read_file] (0-read_file.py) |  Function that reads a text file (UTF8) and prints it to stdout |
+| [1-write_file](1-write_file.py) |  Writes a string to a text file (UTF8) and returns the number of characters written |
+| [2-append_write](2-append_write.py) | Appends a string at the end of a text file (UTF8) and returns the number of characters added|
+| [3-to_json_string](3-to_json_string.py)| Function that returns the JSON representation of an object (a string here) |
+| [4-from_json_string](4-from_json_string.py)| Returns an object (Python data structure) represented by a JSON string|
+| [5-save_to_json_file](5-save_to_json_file.py)| Writes an Object to a text file, using a JSON representation|
