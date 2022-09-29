@@ -66,3 +66,13 @@
 
 	json.loads(string)
 	```
+
+- **dump/dumps and load/loads**
+
+	|     Method       |             Explanation                                              |
+	|:----------------:|:--------------------------------------------------------------------:|   
+	| **json.dumps()** | This method converts a Python object into a *serialized* JSON Object |
+	| **json.dump()**  | This method converts a Python object into JSON and additionally      |
+	|				 | and additionally allows you to store the information into a text file  |
+	| **json.loads()** | Deserializes a JSON object to a standard Python object               |
+	| **json.load()**  | Deserializes a JSON file object into a standard Python object        |
