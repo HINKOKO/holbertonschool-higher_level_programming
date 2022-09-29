@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 10 - Student to JSON, 
+"""Module 10 - Student to JSON,
 With filter please !"""
 
 

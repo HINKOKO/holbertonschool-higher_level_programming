@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Module 11 - Student to disk and reload"""
-import sys
-import json
 
 
 class Student:
