@@ -7,7 +7,7 @@ def pascal_triangle(n):
     of integers representing the
     Pascal's triangle of n"""
     if n <= 0:
-        return [[]]
+        return []
     elif n == 1:
         return [[1]]
     else:
