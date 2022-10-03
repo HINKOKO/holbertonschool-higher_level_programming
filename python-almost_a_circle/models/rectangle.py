@@ -7,14 +7,14 @@ from models.base import Base
 
 class Rectangle(Base):
     """Private instance attributes\
-                            width, height, x, y
+                                                    width, height, x, y
      Class constructor: def __init__(self, width,\
-            Setter allows us to 'protect' width, height,\
-            x and y from bad data, and Getter @property allows us\
-            to retrieve the values we need
+                    Setter allows us to 'protect' width, height,\
+                    x and y from bad data, and Getter @property allows us\
+                    to retrieve the values we need
     Public methods:
-                            - area()
-                            - display()"""
+                                                    - area()
+                                                    - display()"""
 
     def __init__(self, width, height, x=0,
                  y=0, id=None):
@@ -95,3 +95,8 @@ class Rectangle(Base):
             for j in range(0, self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Overrides the __str__ method"""
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {}/{}"
+                .format(self.id, self.__x, self.__y, self.__width, self.__height))
