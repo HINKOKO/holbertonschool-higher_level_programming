@@ -19,6 +19,11 @@ class TestStyleFormat(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings)")
 
+    def TestBase(self):
+        """Test that ID associated exists and match"""
+        self.assertEqual(Base(12), 12)
+        self.asserEqual(Base(5623), 5623)
+
 
 if __name__ == '__main__':
     unittest.main()
