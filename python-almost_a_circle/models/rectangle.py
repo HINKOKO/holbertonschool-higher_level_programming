@@ -7,9 +7,15 @@ from models.base import Base
 
 class Rectangle(Base):
     """Private instance attributes
-        width, height, x, y
+                                                                    width, height, x, y
      Class constructor: def __init__(self, width,\
-                height, x=0, y=0, id=None)"""
+                                                                                                                                                                                                    height, x=0, y=0, id=None)
+                                                                    Setter allows us to 'protect' width, height,
+                                                                    x and y from bad data, and Getter @property allows us
+                                                                    to retrieve the values we need
+    Public method:
+                                                    - area()
+                                                    - display()"""
 
     def __init__(self, width, height, x=0,
                  y=0, id=None):
@@ -78,3 +84,13 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+
+    def area(self):
+        """Returns the area value of Rectangle instance"""
+        return self.__width * self.__height
+
+    def display(self):
+        for i in range(0, self.__height):
+            for j in range(0, self.__width):
+                print("#", end="")
+            print()
