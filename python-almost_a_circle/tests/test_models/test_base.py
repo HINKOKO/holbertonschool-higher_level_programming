@@ -4,8 +4,7 @@ I'm really understanin nothin a t lal
 """
 import unittest
 import pycodestyle
-from models import base
-from models import rectangle
+from models.base import Base
 
 
 class TestStyleFormat(unittest.TestCase):
@@ -19,14 +18,14 @@ class TestStyleFormat(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings)")
 
-    def TestBase(self):
+
+class TestBase(unittest.TestCase):
+    """class for testing Base class"""
+
+    def test_id(self):
         """Test that ID associated exists and match
         with new instances created"""
         b1 = Base()
         b2 = Base(523)
         self.assertEqual(b1.id, 1)
-        self.asserEqual(b2.id, 523)
-
-
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual(b2.id, 523)
