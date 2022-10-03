@@ -6,16 +6,15 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Private instance attributes
-                                                                    width, height, x, y
+    """Private instance attributes\
+                width, height, x, y
      Class constructor: def __init__(self, width,\
-                                                                                                                                                                                                    height, x=0, y=0, id=None)
-                                                                    Setter allows us to 'protect' width, height,
-                                                                    x and y from bad data, and Getter @property allows us
-                                                                    to retrieve the values we need
-    Public method:
-                                                    - area()
-                                                    - display()"""
+        Setter allows us to 'protect' width, height,\
+        x and y from bad data, and Getter @property allows us\
+        to retrieve the values we need
+    Public methods:
+                - area()
+                - display()"""
 
     def __init__(self, width, height, x=0,
                  y=0, id=None):
