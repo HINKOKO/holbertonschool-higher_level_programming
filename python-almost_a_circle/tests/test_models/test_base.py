@@ -22,6 +22,10 @@ class TestStyleFormat(unittest.TestCase):
 class TestBase(unittest.TestCase):
     """class for testing Base class"""
 
+    def setUp(self):
+        """init our class"""
+        Base._Base__nb_objects = 0
+
     def test_id(self):
         """Test that ID associated exists and match
         with new instances created"""
