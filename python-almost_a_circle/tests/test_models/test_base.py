@@ -20,9 +20,12 @@ class TestStyleFormat(unittest.TestCase):
                          "Found code style errors (and warnings)")
 
     def TestBase(self):
-        """Test that ID associated exists and match"""
-        self.assertEqual(Base(12), 12)
-        self.asserEqual(Base(5623), 5623)
+        """Test that ID associated exists and match
+        with new instances created"""
+        b1 = Base()
+        b2 = Base(523)
+        self.assertEqual(b1.id, 1)
+        self.asserEqual(b2.id, 523)
 
 
 if __name__ == '__main__':
