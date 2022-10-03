@@ -107,11 +107,11 @@ class Rectangle(Base):
                 .format(self.id, self.__x, self.__y,
                         self.__width, self.__height))
 
-        def update(self, *args):
-            """assigns an argument to each attribute"""
-            if len(argv) >= 5:
-                self.id = argv[1]
-                self.width = argv[2]
-                self.height = argv[3]
-                self.x = argv[4]
-                self.y = argv[5]
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+        if len(argv) >= 5:
+            self.id = argv[1]
+            self.width = argv[2]
+            self.height = argv[3]
+            self.x = argv[4]
+            self.y = argv[5]
