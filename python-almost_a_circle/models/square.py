@@ -14,8 +14,8 @@ class Square(Rectangle):
         """super call and width and height turned into
         size, since square is the special rectangle
         where width == height == size"""
-        super().__init__(size, size, x, y, id)
         self.size = size
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
@@ -37,9 +37,9 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """assign attributes to list *args
         or to dict **kwargs
-                if args: set in this order, (important!), id,size
-                x, y
-                if no args, set attributes according to kwargs"""
+                        if args: set in this order, (important!), id,size
+                        x, y
+                        if no args, set attributes according to kwargs"""
         if args:
             for i, j in enumerate(args):
                 if i == 0:
@@ -60,3 +60,8 @@ class Square(Rectangle):
                     self.x = val
                 elif key == "y":
                     self.y = val
+
+        def to_dictionary(self):
+            """returns the dict rep of a Square instance"""
+            d = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+            return d

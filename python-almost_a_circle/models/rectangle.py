@@ -132,3 +132,11 @@ class Rectangle(Base):
                     self.x = val
                 elif key == "y":
                     self.y = val
+
+    def to_dictionary(self):
+        """returns the dictionary rep of a Rectangle instance"""
+        key_list = ["id", "width", "height", "x", "y"]
+        val_list = [self.id, self.__width, self.__height, self.__x, self.__y]
+        ziptchouk = zip(key_list, val_list)
+        d = dict(ziptchouk)
+        return d
