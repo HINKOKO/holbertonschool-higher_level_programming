@@ -30,8 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """overloading str pattern for square"""
-        sq = ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
-                                                        self.x, self.y, self.size))
+        sq = ("[Square] ({}) {}/{} - {}".format(self.id,
+                                                self.x, self.y, self.size))
         return sq
 
     def update(self, *args, **kwargs):
