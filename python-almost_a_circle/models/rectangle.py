@@ -2,7 +2,6 @@
 """Module 2. First Rectangle
 Creates a Rectangle class, which inherits
 from class Base (base.py)"""
-from sys import argv
 from models.base import Base
 
 
@@ -109,18 +108,18 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-        if len(args) != 0:
-            for i in enumerate(args):
+        if args:
+            for i, j in enumerate(args):
                 if i == 0:
-                    self.id = i
+                    self.id = j
                 elif i == 1:
-                    self.width = i
+                    self.width = j
                 elif i == 2:
-                    self.height = i
+                    self.height = j
                 elif i == 3:
-                    self.x = i
-                elif i == 4:
-                    self.y = i
+                    self.x = j
+                else:
+                    self.y = j
         else:
             for key, val in kwargs.items():
                 if key == "id":

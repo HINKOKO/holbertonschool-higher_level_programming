@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """class Square
 Inherits from Rectangle"""
-
-from models.base import Base
+from sys import argv
 from models.rectangle import Rectangle
 
 
@@ -15,8 +14,8 @@ class Square(Rectangle):
         """super call and width and height turned into
         size, since square is the special rectangle
         where width == height == size"""
-        self.size = size
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     @property
     def size(self):
@@ -31,23 +30,26 @@ class Square(Rectangle):
 
     def __str__(self):
         """overloading str pattern for square"""
-        sq = ("[Square] ({}) {}/{} - {}".format(self.id,
-                                                self.x, self.y, self.size))
+        sq = ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                        self.x, self.y, self.size))
         return sq
 
     def update(self, *args, **kwargs):
         """assign attributes to list *args
-        or to dict **kwargs"""
-        if len(args) != 0 and args is not None:
-            for j, k in enumerate(args):
-                if j == 0:
-                    self.id = k
-                elif j == 1:
-                    self.size == k
-                elif j == 2:
-                    self.x = k
-                elif j == 3:
-                    self.y = k
+        or to dict **kwargs
+                if args: set in this order, (important!), id,size
+                x, y
+                if no args, set attributes according to kwargs"""
+        if args:
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                elif i == 1:
+                    self.size = j
+                elif i == 2:
+                    self.x = j
+                elif i == 3:
+                    self.y = j
         else:
             for key, val in kwargs.items():
                 if key == "id":
