@@ -21,21 +21,40 @@ class Square(Rectangle):
     @property
     def size(self):
         """getter, used to retrieve size"""
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, value):
         """Setter, protect the size attribute"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self.__width = value
-            self.__height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """overloading str pattern for square"""
         sq = ("[Square] ({}) {}/{} - {}".format(self.id,
-                                                self.x, self.y, self.__width))
+                                                self.x, self.y, self.size))
         return sq
+
+    def update(self, *args, **kwargs):
+        """assign attributes to list *args
+        or to dict **kwargs"""
+        if len(args) != 0 and args is not None:
+            for j, k in enumerate(args):
+                if j == 0:
+                    self.id = k
+                elif j == 1:
+                    self.size == k
+                elif j == 2:
+                    self.x = k
+                elif j == 3:
+                    self.y = k
+        else:
+            for key, val in kwargs.items():
+                if key == "id":
+                    self.id = val
+                elif key == "size":
+                    self.size = val
+                elif key == "x":
+                    self.x = val
+                elif key == "y":
+                    self.y = val
