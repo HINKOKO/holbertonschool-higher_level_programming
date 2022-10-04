@@ -27,15 +27,15 @@ class Square(Rectangle):
     def size(self, value):
         """Setter, protect the size attribute"""
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("size must be > 0")
+            raise ValueError("width must be > 0")
         else:
             self.__width = value
             self.__height = value
 
     def __str__(self):
         """overloading str pattern for square"""
-        sq = ("[Square] ({}) {} / {} - {}".format(self.id,
-                                                  self.x, self.y, self.__width))
+        sq = ("[Square] ({}) {}/{} - {}".format(self.id,
+                                                self.x, self.y, self.__width))
         return sq
