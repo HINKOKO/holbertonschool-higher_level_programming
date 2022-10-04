@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """class Square
 Inherits from Rectangle"""
-from sys import argv
 from models.rectangle import Rectangle
 
 
@@ -61,7 +60,7 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = val
 
-        def to_dictionary(self):
-            """returns the dict rep of a Square instance"""
-            d = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
-            return d
+    def to_dictionary(self):
+        """returns the dict rep of a Square instance"""
+        d = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        return d
