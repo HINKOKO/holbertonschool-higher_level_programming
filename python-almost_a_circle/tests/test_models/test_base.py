@@ -3,6 +3,7 @@
 I'm really understanding nothing at all
 """
 import unittest
+import json
 from models.base import Base
 
 
@@ -31,3 +32,8 @@ class TestBase(unittest.TestCase):
         b = Base()
         self.assertTrue(isinstance(b, Base))
         self.assertEqual(type(b), Base)
+
+    def test_json_str_empty(self):
+        """test if empty list produce what expected"""
+        bjson = Base.to_json_string([])
+        self.assertEqual(bjson, '[]')
