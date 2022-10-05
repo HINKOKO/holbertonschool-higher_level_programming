@@ -11,11 +11,11 @@ def pascal_triangle(n):
     elif n == 1:
         return [[1]]
     else:
-        pascal = []
+        result = []
         for row in range(n):
             newrow = [1]
-            for col in range(1, row + 1):
-                newcell = newrow[col - 1] * float((row + 1 - col) / col)
+            for cols in range(1, row + 1):
+                newcell = newrow[cols - 1] * (row + 1 - cols)/cols
                 newrow.append(int(newcell))
-            pascal.append(newrow)
-        return pascal
+            result.append(newrow)
+        return result
