@@ -56,13 +56,3 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-
-    @classmethod
-    def load_from_file(cls):
-        """returns list of instances"""
-        record_name = cls.__name__ + ".json"
-        book = []
-        if os.path.exists(record_name):
-            with open(record_name, "r") as record:
-            book.append(cls.create())
-        return book
