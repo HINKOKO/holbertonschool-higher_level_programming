@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 1 - Base class"""
 import json
-import os.path
+from os.path import exists
 
 
 class Base:
@@ -57,3 +57,15 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        fname = cls.__name__ + ".json"
+        lst = []
+        if exists(fname):
+            with open(fname, 'r') as f:
+                l = cls.from_json_string(f.read())
+                for half in l:
+                    lst.append(cls.create())
+                return lst
