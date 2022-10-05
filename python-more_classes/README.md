@@ -32,8 +32,25 @@
 - 
 - What is a class attribute
 - What is the difference between a object attribute and a class attribute
-- What is a class method
-- What is a static method
+- **What is a class method:**
+	Use the decorator `@classmethod` to build one, a classmethod receive the class as implicit first argument `cls`,
+	just like an instance method receives the instance
+	Syntax:
+	```
+	class Classe(obj):
+		@classmethod
+		def func(cls, arg_1, arg_2, ...)
+			...
+	```
+	- **class method** is *bound to the class* and not *the object of the class*
+	- They have access to the *state* of the class as it takes a class parameter that points to the class and not the object instance
+	- It can modify a class state that would apply accross all instances of the class. I.e. it can modify a class variable that will be applicable to all the instances 
+- **What is a static method:**
+	Use the decorator @staticmethod to create one. <br>
+	Doesn't receive an implicit first argument, we mean, it needs **neither `cls` nor `self`.**
+	**Static method** is also bound to the class and not the object of the class. This method **cannot access or modify the class state.
+	In general , static methods know nothing about the **class state**, they are just *utility_type methods that take some parameters and work upon those. <br>
+	We generally use static methods to create utility functions.
 - How to dynamically create arbitrary new attributes for existing instances of a class
 - How to bind attributes to object and classes
 - What is and what does contain __dict__ of a class and of an instance of a class
