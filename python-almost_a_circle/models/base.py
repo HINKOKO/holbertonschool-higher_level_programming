@@ -66,6 +66,6 @@ class Base:
         if exists(fname):
             with open(fname, 'r') as f:
                 l = cls.from_json_string(f.read())
-                for half in l:
-                    lst.append(cls.create())
-                return lst
+            for a, b in enumerate(l):
+                lst.append(cls.create(**l[a]))
+        return lst
