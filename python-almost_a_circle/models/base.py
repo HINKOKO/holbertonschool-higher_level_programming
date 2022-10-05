@@ -30,13 +30,13 @@ class Base:
     def save_to_file(cls, list_objs):
         """class method - writes the JSON string rep
         of list_obj to a file"""
+        fname = cls.__name__ + ".json"
         record = []
         if list_objs is not None:
-            for inst in list_objs:
-                record.append(cls.to_dictionary(inst))
-            fname = cls.__name__ + ".json"
-            with open(fname, "w") as f:
-                f.write(cls.to_json_string(record))
+            for i in list_objs:
+                record.append(cls.to_dictionary(i))
+        with open(fname, "w+") as f:
+            f.write(cls.to_json_string(record))
 
     @staticmethod
     def from_json_string(json_string):
