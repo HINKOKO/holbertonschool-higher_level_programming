@@ -66,9 +66,9 @@ class Base:
         lst = []
         if exists(fname):
             with open(fname, 'r') as f:
-                l = cls.from_json_string(f.read())
-            for a, b in enumerate(l):
-                lst.append(cls.create(**l[a]))
+                inst = cls.from_json_string(f.read())
+            for i in range(len(inst)):
+                lst.append(cls.create(**inst[i]))
         return lst
 
     @classmethod
@@ -79,31 +79,19 @@ class Base:
             if list_objs is not None:
                 list_objs = [a.to_dictionary() for a in list_objs]
                 if cls.__name__ == "Square":
-                    field_names = ['id','size','x','y']
+                    field_names = ['id', 'size', 'x', 'y']
                 if cls.__name__ == "Rectangle":
-                    field_names = ['id','width','height','x','y']
+                    field_names = ['id', 'width', 'height', 'x', 'y']
                 # thanks to https://docs.python.org/3/library/csv.html
-                # thanks to https://www.programcreek.com/python/example/3190/csv.DictWriter
+                # thanks to https://www.programcreek.com/\
+                # python/example/3190/csv.DictWriter
                 writer = csv.DictWriter(c, fieldnames=field_names)
                 writer.writeheader()
                 writer.writerows(list_objs)
-            
+
     @classmethod
     def load_from_file_csv(cls):
-        #https://www.analyticsvidhya.com/blog/2021/08/python-tutorial-working-with-csv-file-for-data-science/#h2_2
+        # https://www.analyticsvidhya.com/blog/2021/08/\
+        # python-tutorial-working-with-csv-file-for-data-science/#h2_2
         """deserializes from CSV, returns list of instances
         (just as load_from_file(cls) about JSON"""
-        csv_name = cls.__name__ + ".csv"
-        header = []
-        rows = []
-        if exists(csv_name):
-            with open(csv_name, 'r') as c:
-                reader = csv.DictReader(c)
-                if cls.__name__ == "Square":
-                    fields = ['id','size','x','y']
-                if cls.__name__ == "Rectangle":
-                    fields = ['id','width','height','x','y']
-                fields = next(reader)
-                for row in reader:
-                    rows.append(row)
-        return rows, fields
