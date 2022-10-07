@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for testing Rectangle class"""
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -27,10 +28,10 @@ class TestRectangle(unittest.TestCase):
             r10 = Rectangle()
             r11 = Rectangle(0, 8)
         
-        self.assertEqual(r1._Base__nb_objects, 2)
         self.assertEqual(r1.id, 1)
-        self.assertEqual(r2._Base__nb_objects, 2)
+        self.assertEqual(r1._Base__nb_objects, 2)
         self.assertEqual(r2.id, 2)
+        self.assertEqual(r2._Base__nb_objects, 2)
         self.assertTrue(isinstance(r1, Rectangle), True)
         self.assertTrue(isinstance(r2, Rectangle), True)
         
