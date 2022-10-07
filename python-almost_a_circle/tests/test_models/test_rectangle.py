@@ -16,11 +16,12 @@ class TestBase(unittest.TestCase):
 	def test_various_instances(self):
 		"""Tests with 2, 3, 4 regular args passed
 		Then with non valid type or negative integers"""
-		r1 = Rectangle(10, 1)
-		r2 = Rectangle(10, 2, 0, 0, 12)
+		r1 = Rectangle(1, 2)
+		r2 = Rectangle(1, 2, 3)
 		self.assertEqual(r1.id, 3)
-		self.assertEqual(r2.id, 12)
-		self.assertEqual(r2._Base__nb_objects, 3)
+		self.assertEqual(r2.id, 4)
+		self.assertEqual(r1._Base__nb_objects, 4)
+		self.assertEqual(r2._Base__nb_objects, 4)
 
 		with self.assertRaises(TypeError):
 			r3 = Rectangle("5", 6)
@@ -36,6 +37,7 @@ class TestBase(unittest.TestCase):
 
 		r = Rectangle(3, 2).area()
 		self.assertEqual(r, 6)
+
 	
 
 
