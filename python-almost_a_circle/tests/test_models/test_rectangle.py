@@ -22,6 +22,7 @@ class TestBase(unittest.TestCase):
             r6 = Rectangle(6, 5, 8, "9")
             r7 = Rectangle(-5, 5)
             r8 = Rectangle(0, 8)
+        self.assertEqual(r1.id, 2)
         self.assertTrue(isinstance(r1, Rectangle), True)
         self.assertTrue(isinstance(r2, Rectangle), True)
 
