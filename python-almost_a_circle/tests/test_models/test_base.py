@@ -57,3 +57,5 @@ class TestBase(unittest.TestCase):
         self.assertTrue(type(blist), list)
         self.assertTrue(type(blist_2), list)
 
+if __name__ == "__main__":
+    unittest.main()
