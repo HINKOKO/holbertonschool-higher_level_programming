@@ -105,5 +105,5 @@ class Base:
                 for key, value in item.items():
                     res_dict[key] = int(value)
                 # how to use create ?
-                print(res_dict)
+                res.append(cls.create(**res_dict))
         return res
