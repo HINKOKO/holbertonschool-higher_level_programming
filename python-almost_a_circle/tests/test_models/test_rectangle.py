@@ -31,7 +31,13 @@ class TestRectangle(unittest.TestCase):
     def test_wrong_values(self):
         """test wrong rectangles"""
         self.assertRaisesRegexp(TypeError, 'width must be an integer', Rectangle, "5", 5)
-        
+        with self.assertRaises(TypeError):
+            Rectangle(1, "5")
+            Rectangle(1, 2, "3")
+            Rectangle(1, 2, 3, "4")
+            Rectangle(1, -2)
+            Rectangle(0, 1)
+            Rectangle(1, 0)
     def test_area(self):
         """test that area exists when
         right arguments provided"""
