@@ -59,6 +59,19 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(5, 6, 1, 2, 5)
         self.assertEqual(str(r), '[Rectangle] (5) 1/2 - 5/6')
 
+    def test_update(self):
+        """test that update function works
+        and right args updated accordingly"""
+        r = Rectangle(5, 6, 1, 2, 5)
+        r_up = r.update(50, 60, 10, 20, 50)
+        self.assertEqual(r.id, 50)
+        self.assertEqual(r.width, 60)
+        self.assertEqual(r.height, 10)
+        self.assertEqual(r.x, 20)
+        self.assertEqual(r.y, 50)
+
+
+
 if __name__ == "__main__":
     unittest.main()
     
