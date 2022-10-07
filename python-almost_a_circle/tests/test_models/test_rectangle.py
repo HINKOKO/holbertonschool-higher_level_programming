@@ -90,14 +90,14 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         """test on output conformance"""
         r = Rectangle(2, 6)
-        r1 = Rectangle(8, 7, 3, 2, 4)
+        r1 = Rectangle(5, 7, 3, 1, 8)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             r.display()
             self.assertEqual(fake_out.getvalue(), (2 * '#' + '\n') * 6)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             r1.display()
-            self.assertEqual(fake_out.getvalue(), ((2 * '\n') + \
-                (' ' * 3 + '#' * 8 + '\n') * 7))
+            self.assertEqual(fake_out.getvalue(), ((1 * '\n') + \
+                (' ' * 3 + '#' * 5 + '\n') * 7))
     
 if __name__ == "__main__":
     unittest.main()
