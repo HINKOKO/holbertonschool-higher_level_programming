@@ -5,13 +5,15 @@ I'm really understanding nothing at all
 import unittest
 import json
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
     """class for testing Base class"""
 
-    def setUp(self):
+    def tearDown(self):
         Base._Base__nb_objects = 0
+        self.assertEqual(Base._Base__nb_objects, 0)
 
     def test_id(self):
         """Test that ID associated exists and match
