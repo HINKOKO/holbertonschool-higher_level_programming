@@ -63,13 +63,6 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(5, 6, 1, 2, 5)
         self.assertEqual(str(r), '[Rectangle] (5) 1/2 - 5/6')
 
-    @patch('sys.stdout', new_callable = StringIO)
-    def test_display(self, stdout):
-        """test if output is has expected"""
-        r = Rectangle(2, 6)
-        r.display()
-        self.assertEqual(stdout.getvalue(), (2 * '#' + '\n') * 6)
-
 
     def test_create(self):
         """test that create is OK""" 
@@ -95,10 +88,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(type(r1.to_dictionary()), dict)
         self.assertEqual(r1.to_dictionary(), {
                          'id': 1, 'width': 10, 'height': 10, 'x': 5, 'y': 0})
-
-
-
-
+    
 if __name__ == "__main__":
     unittest.main()
     

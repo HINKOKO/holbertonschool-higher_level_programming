@@ -11,3 +11,10 @@ def test_diplay(self):
             output = buf.getvalue()
             self.assertEqual(
                 output, (2 * "\n" + (" " * 3 + "#" * 8 + "\n") * 7))
+
+  @patch('sys.stdout', new_callable = StringIO)
+    def test_display(self, stdout):
+        """test if output is has expected"""
+        r = Rectangle(2, 6)
+        r.display()
+        self.assertEqual(stdout.getvalue(), (2 * '#' + '\n') * 6
