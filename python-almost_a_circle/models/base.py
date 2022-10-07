@@ -62,13 +62,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        fname = cls.__name__ + ".json"
         lst = []
-        if exists(fname):
-            with open(fname, 'r') as f:
-                inst = cls.from_json_string(f.read())
-            for i in range(len(inst)):
-                lst.append(cls.create(**inst[i]))
+        with open(cls.__name__ + ".json", 'r') as f:
+            list_inst = cls.from_json_string(f.read())
+        for items in range(len(list_inst)):
+            # formatting dict in list
+            lst.append(cls.create(**list_inst[items]))
         return lst
 
     @classmethod
@@ -95,16 +94,13 @@ class Base:
         # python-tutorial-working-with-csv-file-for-data-science/#h2_2
         """deserializes from CSV, returns list of instances
         (just as load_from_file(cls) about JSON"""
-        filename = cls.__name__ + ".csv"
-        try:
-            with open(filename, 'r', newline='') as csvfile:
-                if cls.__name__ == "Rectangle":
-                    fields = ['id', 'widht', 'height', 'x', 'y']
-                else:
-                    fields = ['id', 'size', 'x', 'y']
-                objs = csv.DictReader(csvfile, fieldnames=fields)
-                objs = [dict([k, int(v)] for k, v in d.items())
-                        for d in objs]
-                return [cls.create(**d) for d in objs]
-        except FileNotFoundError:
-            return []
+        res = []
+        res_dict = {}
+        with open(cls.__name__ + ".csv", 'r', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for item in reader:
+                for key, value in item.items():
+                    res_dict[key] = int(value)
+                # format it with ```create```
+                res.append(cls.create(**res_dict))
+        return res
