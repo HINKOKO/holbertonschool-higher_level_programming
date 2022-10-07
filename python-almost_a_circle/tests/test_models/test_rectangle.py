@@ -28,6 +28,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.width, 1)
         self.assertEqual(r2.height, 2)
         
+    def test_wrong_values(self):
+        """test wrong rectangles"""
+        self.assertRaisesRegexp(TypeError, 'width must be an integer', Rectangle, "5", 5)
         
     def test_area(self):
         """test that area exists when
