@@ -12,7 +12,7 @@ class TestBase(unittest.TestCase):
         Base._Base__nb_objects = 0
         self.assertEqual(Base._Base__nb_objects, 0)
     
-    def test_various_instances(self):
+    def test_instances(self):
         """Tests with 2, 3, 4 regular args passed
         Then with non valid type or negative integers"""
 
