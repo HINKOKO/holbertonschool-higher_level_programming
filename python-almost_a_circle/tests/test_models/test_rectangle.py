@@ -32,6 +32,9 @@ class TestRectangle(unittest.TestCase):
             Rectangle(5, "5")
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "3")
+            Rectangle(1, 2, 3, "4")
+            Rectangle(-1, 2)
+            Rectangle(1, -2)
     
     def test_area(self):
         """test that area exists when
