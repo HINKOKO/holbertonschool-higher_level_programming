@@ -6,7 +6,7 @@ from models.rectangle import Rectangle
 
 Base._Base__nb_objects = 0
 
-class TestBase(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     """Basic test for rectangle module"""
     def tearDown(self):
         Base._Base__nb_objects = 0
@@ -18,6 +18,13 @@ class TestBase(unittest.TestCase):
 
         r1 = Rectangle(4, 5)
         r2 = Rectangle(5, 6, 7)
+        self.assertEqual(r1._Base__nb_objects, 2)
+        self.assertEqual(r1.id, 1)
+        self.assertEqual(r2._Base__nb_objects, 2)
+        self.assertEqual(r2.id, 2)
+        self.assertTrue(isinstance(r1, Rectangle), True)
+        self.assertTrue(isinstance(r2, Rectangle), True)
+        
         with self.assertRaises(TypeError):
             r5 = Rectangle("5", 6)
             r6 = Rectangle(6, "8")
@@ -26,12 +33,7 @@ class TestBase(unittest.TestCase):
             r9 = Rectangle(-5, 5)
             r10 = Rectangle()
             r11 = Rectangle(0, 8)
-        self.assertEqual(r1._Base__nb_objects, 2)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2._Base__nb_objects, 2)
-        self.assertEqual(r2.id, 2)
-        self.assertTrue(isinstance(r1, Rectangle), True)
-        self.assertTrue(isinstance(r2, Rectangle), True)
+        
 
     def test_area(self):
         """test that area exists when
