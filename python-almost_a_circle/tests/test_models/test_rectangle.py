@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Module for testing Rectangle class"""
 import unittest
+from unittest.mock import patch 
 import os
+from io import StringIO
+import sys
+import contextlib
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -58,6 +62,24 @@ class TestRectangle(unittest.TestCase):
         """Test if str representation is correct"""
         r = Rectangle(5, 6, 1, 2, 5)
         self.assertEqual(str(r), '[Rectangle] (5) 1/2 - 5/6')
+
+    @patch('sys.stdout', new_callable = StringIO)
+    def test_display(self, stdout):
+        """test if output is has expected"""
+        r = Rectangle(2, 6)
+        r1 = Rectangle(2, 5, 6, 4, 6)
+        r.display()
+        self.assertEqual(stdout.getvalue(), (2 * '#' + '\n') * 6)
+        r1.display()
+        self.assertEqual(stdout.getvalue(), (4 * '\n' + (" " * 6 + '#' * 2 + '\n') * 6))
+
+    def test_create(self):
+        """test that create is OK""" 
+        rect_created = Rectangle.create(**{'id': 10, 'width': 5,
+                                      'height': 10, 'x': 3, 'y': 4})
+        answer = Rectangle(5, 10, 3, 4, 10)
+        self.assertEqual(str(rect_created), str(answer))
+
 
     def test_update(self):
         """test that update function works
