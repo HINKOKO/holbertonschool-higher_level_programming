@@ -9,11 +9,11 @@ Base._Base__nb_objects = 0
 
 class TestRectangle(unittest.TestCase):
     """Basic test for rectangle module"""
-    def tearDown(self):
+    def setUp(self):
         Base._Base__nb_objects = 0
         self.assertEqual(Base._Base__nb_objects, 0)
     
-    def test_instances(self):
+    def test_rectangle(self):
         """Tests with 2, 3, 4 regular args passed
         Then with non valid type or negative integers"""
 
@@ -21,7 +21,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(5, 6, 7)
         with self.assertRaises(TypeError):
             r5 = Rectangle("5", 6)
-            r6 = Rectangle(6, "8")
+            r6 = Rectangle("string")
             r7 = Rectangle(6, 7, "1")
             r8 = Rectangle(6, 5, 8, "9")
             r9 = Rectangle(-5, 5)

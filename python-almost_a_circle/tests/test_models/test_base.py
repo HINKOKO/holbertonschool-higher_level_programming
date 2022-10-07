@@ -3,6 +3,7 @@
 I'm really understanding nothing at all
 """
 import unittest
+import os
 import json
 from models.base import Base
 from models.rectangle import Rectangle
