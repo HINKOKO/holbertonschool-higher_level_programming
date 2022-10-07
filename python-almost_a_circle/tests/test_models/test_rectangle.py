@@ -32,8 +32,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1._Base__nb_objects, 2)
         self.assertEqual(r2.id, 2)
         self.assertEqual(r2._Base__nb_objects, 2)
-        self.assertTrue(isinstance(r1, Rectangle), True)
-        self.assertTrue(isinstance(r2, Rectangle), True)
         
 
     def test_area(self):
