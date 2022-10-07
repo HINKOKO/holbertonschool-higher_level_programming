@@ -38,6 +38,12 @@ class TestRectangle(unittest.TestCase):
             Rectangle(-1, 2)
         with self.assertRaises(ValueError):
             Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
     
     def test_area(self):
         """test that area exists when
@@ -45,6 +51,11 @@ class TestRectangle(unittest.TestCase):
 
         r = Rectangle(3, 2).area()
         self.assertEqual(r, 6)
+
+    def test_str(self):
+        """Test if str representation is correct"""
+        r = Rectangle(5, 6, 1, 2, 5)
+        self.assertEqual(str(r), '[Rectangle] (5) 1/2 - 5/6')
 
 if __name__ == "__main__":
     unittest.main()
