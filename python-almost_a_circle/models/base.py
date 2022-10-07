@@ -104,6 +104,6 @@ class Base:
             for item in reader:
                 for key, value in item.items():
                     res_dict[key] = int(value)
-                # format it with ```create```
-                res.append(cls.create(**res_dict))
+                # how to use create ?
+                print(res_dict)
         return res
