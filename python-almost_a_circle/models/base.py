@@ -63,12 +63,15 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances"""
         lst = []
-        with open(cls.__name__ + ".json", 'r') as f:
-            list_inst = cls.from_json_string(f.read())
-        for items in range(len(list_inst)):
-            # formatting dict in list
-            lst.append(cls.create(**list_inst[items]))
-        return lst
+        try:
+            with open(cls.__name__ + ".json", 'r') as f:
+                list_inst = cls.from_json_string(f.read())
+            for items in range(len(list_inst)):
+                # formatting dict in list
+                lst.append(cls.create(**list_inst[items]))
+            return lst
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
