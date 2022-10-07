@@ -67,11 +67,9 @@ class TestRectangle(unittest.TestCase):
     def test_display(self, stdout):
         """test if output is has expected"""
         r = Rectangle(2, 6)
-        r1 = Rectangle(2, 5, 6, 4, 6)
         r.display()
         self.assertEqual(stdout.getvalue(), (2 * '#' + '\n') * 6)
-        r1.display()
-        self.assertEqual(stdout.getvalue(), (4 * '\n' + (" " * 6 + '#' * 2 + '\n') * 6))
+
 
     def test_create(self):
         """test that create is OK""" 
