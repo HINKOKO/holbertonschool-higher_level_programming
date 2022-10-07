@@ -71,7 +71,6 @@ class TestRectangle(unittest.TestCase):
         answer = Rectangle(5, 10, 3, 4, 10)
         self.assertEqual(str(rect_created), str(answer))
 
-
     def test_update(self):
         """test that update function works
         and right args updated accordingly"""
@@ -88,6 +87,17 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(type(r1.to_dictionary()), dict)
         self.assertEqual(r1.to_dictionary(), {
                          'id': 1, 'width': 10, 'height': 10, 'x': 5, 'y': 0})
+    def test_display(self):
+        """test on output conformance"""
+        r = Rectangle(2, 6)
+        r1 = Rectangle(8, 7, 3, 2, 4)
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r.display()
+            self.assertEqual(fake_out.getvalue(), (2 * '#' + '\n') * 6)
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r1.display()
+            self.assertEqual(fake_out.getvalue(), ((2 * '\n') + \
+                (' ' * 3 + '#' * 8 + '\n') * 7))
     
 if __name__ == "__main__":
     unittest.main()
