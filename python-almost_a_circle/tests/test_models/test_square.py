@@ -4,6 +4,7 @@ This is the "test_square" module
 Thes test_square module supplies a class to test class Square
 """
 
+from re import S
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -91,3 +92,26 @@ class TestSquare(unittest.TestCase):
         r2 = Square(10)
         r3 = Square(10, 10, 10, 50)
         self.assertEqual(r1.__str__(), "[Square] (1) 10/0 - 10")
+        self.assertEqual(r2.__str__(), "[Square] (2) 0/0 - 10")
+        self.assertEqual(r3.__str__(), "[Square] (50) 10/10 - 10")
+
+    # Test toDictionary
+
+    def test_toDictionary(self):
+        r1 = Square(10, 10, 0)
+        self.assertTrue(type(r1.to_dictionary()), dict)
+        self.assertEqual(r1.to_dictionary(), {
+                         'id': 1, 'size': 10, 'x': 10, 'y': 0})
+
+    def test_update(self):
+        """test that update function works
+        and right args updated accordingly"""
+        r = Square(5, 2, 4, 6)
+        r_up = r.update(10, 4, 8, 12)
+        self.assertEqual(r.id, 10)
+        self.assertEqual(r.size, 4)
+        self.assertEqual(r.x, 8)
+        self.assertEqual(r.y, 12)
+
+    if __name__ == "__main__":
+        unittest.main()
