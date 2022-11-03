@@ -1,4 +1,4 @@
 -- Script that computes average temperatures by city
-SELECT AVG(value) 'avg_temp'
+SELECT city, AVG(value) 'avg_temp'
 FROM temperatures
-GROUP BY city;
+GROUP BY city ORDER BY avg_temp DESC;
