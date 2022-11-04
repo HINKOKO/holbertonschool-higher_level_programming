@@ -1,6 +1,6 @@
 # **SQL - Introduction**
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fsql-server_3161133&psig=AOvVaw37n9h8QdiPDvhySo-uRB6M&ust=1667631588177000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMi48fX5k_sCFQAAAAAdAAAAABAD)">
+![Alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fsql-server_3161133&psig=AOvVaw37n9h8QdiPDvhySo-uRB6M&ust=1667631588177000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMi48fX5k_sCFQAAAAAdAAAAABAD)
 
 
 ## **Learning Objectives**
