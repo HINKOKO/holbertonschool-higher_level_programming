@@ -14,7 +14,7 @@ if "__main__" == __name__:
         port=3306,
         user="root",
         passwd="root",
-        db="hbtn_0e_0_usa",
+        db=sys.argv[3],
         charset="utf8"
     )
     cur = db.cursor()
