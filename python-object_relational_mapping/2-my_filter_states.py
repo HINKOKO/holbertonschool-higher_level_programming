@@ -19,7 +19,8 @@ if "__main__" == __name__:
     )
     cur = db.cursor()
     cur.execute(
-        f"SELECT * FROM states WHERE name LIKE '{sys.argv[4]}' ORDER BY states.id ASC"
+        "SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY states.id ASC".format(
+            sys.argv[4])
     )
     rows = cur.fetchall()
     for row in rows:
