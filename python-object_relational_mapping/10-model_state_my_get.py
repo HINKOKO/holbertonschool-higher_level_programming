@@ -18,9 +18,11 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
+    found = False
     for wanted_id in session.query(State).filter(State.name == sys.argv[4]):
         if wanted_id:
+            found = True
             print("{:d}".format(wanted_id.id))
-        else:
-            print("Not found")
+    if found == False:
+        print("Not found")
     session.close()
