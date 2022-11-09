@@ -22,10 +22,11 @@ if "__main__" == __name__:
     )
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities \
-                INNER JOIN states WHERE states.id=cities.state_id AND states.name= %s \
-                ORDER BY cities.id ASC", (sys.argv[4], )
+                INNER JOIN states WHERE states.id=cities.state_id \
+                AND states.name= %s ORDER BY cities.id ASC", (sys.argv[4], )
                 )
     rows = cur.fetchall()
-    display = (' ,'.join(row[0] for row in rows))
+    display = (', '.join(row[0] for row in rows))
+    print(str(display))
     cur.close()
     db.close()
