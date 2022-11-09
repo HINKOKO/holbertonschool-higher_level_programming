@@ -23,6 +23,6 @@ if __name__ == "__main__":
         if wanted_id:
             found = True
             print("{:d}".format(wanted_id.id))
-    if found == False:
+    if found is False:
         print("Not found")
     session.close()
