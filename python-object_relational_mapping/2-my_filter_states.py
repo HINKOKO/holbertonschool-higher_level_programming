@@ -3,6 +3,7 @@
 """
 Script to list all states
 from database hbtn_0e_0usa
+where name of states matches an argument of command line
 """
 
 import MySQLdb

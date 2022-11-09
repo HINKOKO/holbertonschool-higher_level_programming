@@ -3,6 +3,7 @@
 """
 Script to list all states
 from database hbtn_0e_0usa
+Filtering those with a name starting with upper 'N'
 """
 
 import MySQLdb
