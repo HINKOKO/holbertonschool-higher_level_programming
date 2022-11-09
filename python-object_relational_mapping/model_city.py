@@ -19,7 +19,7 @@ class City(Base):
     - state_id represents column of integer, can't be null
     and is a foreign key to states.id
     """
-    __tablename__ = 'states'
+    __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
