@@ -1,6 +1,6 @@
 -- Script to list all genres by their rating
 -- Sorted in descending order rate
-SELECT tv_genres.name, SUM(rate) as `rate`
+SELECT tv_genres.name, SUM(rate) AS `rate`
 FROM tv_genres
 INNER JOIN tv_show_genres ON tv_show_genres.genre_id = tv_genres.id
 INNER JOIN tv_show_ratings ON tv_show_ratings.show_id = tv_show_genres.show_id
