@@ -1,18 +1,10 @@
 #!/usr/bin/node
-let current;
-let max = -1;
-let secondMax = -1;
-if (process.argv.length <= 3) {
-  console.log(0);
-} else {
-  for (let i = 2; i < process.argv.length; i++) {
-    current = parseInt(process.argv[i], 10);
-    if (current > max) {
-      secondMax = max;
-      max = current;
-    } else {
-      secondMax = current;
-    }
-  }
-  console.log(secondMax);
+
+const numsArray = process.argv.slice(2);
+let secondMax = 0;
+if (numsArray.length > 1) {
+// we provide a compare function, to prevent incorrect result
+// if numbers sorted as strings, 25 would be greater than 100
+  secondMax = numsArray.sort(function (a, b) { return b - a; })[1];
 }
+console.log(secondMax);
