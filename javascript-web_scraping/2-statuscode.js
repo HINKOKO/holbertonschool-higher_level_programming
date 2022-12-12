@@ -4,6 +4,6 @@ const requestSettings = {
   method: 'GET',
   url: process.argv[2]
 };
-request(requestSettings, function (error, response, body) {
+request(requestSettings, function (_error, response) {
   console.log(`code: ${response.statusCode}`);
 });
