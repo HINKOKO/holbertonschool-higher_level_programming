@@ -4,6 +4,6 @@
 // DOMContentLoaded may fire before the script has a chance to run, so wise to check before
 // by adding here our addEventListener on DOMContentLoaded
 
-document.addEventListener('DOMContentLoaded', e => {
+document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('header').style.color = '#FF0000';
 });
